@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">HappyFirst</string>
+    <string name="onb2">START RECORDING YOUR MENSTRUATION JOURNEY</string>
+    <string name="onb1">TO FULLY BENEFIT FROM THIS APP GIVE ACCURATE INFORMATION ALWAYS</string>
+    <string name="welcome_to_happy_first">Welcome To HappyFirst!</string>
+    <string name="i_am_guest">I AM GUEST</string>
+    <string name="i_have_an_acount">I HAVE ACCOUNT</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="welcome">Welcome</string>
+    <string name="begin_your_journey">Register to Begin Your Journey</string>
+    <string name="first_name">Enter FirstName</string>
+    <string name="Dob">D.O.B</string>
+    <string name="enter_phone_number">Enter Pnone Number</string>
+    <string name="id_number">Enter User Group</string>
+    <string name="enter_password">Enter Pin</string>
+    <string name="go_login">Create Account</string>
+    <string name="i_have_an_account_login">I Have Account</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="pupose1">This App is for you to Check wether your cycle is close or not. Use this section only if your cycle has not yet started.</string>
+    <string name="national">Information</string>
+    <string name="provincial">Get Pads</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

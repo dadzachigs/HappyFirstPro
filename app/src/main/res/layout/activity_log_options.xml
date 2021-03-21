@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    tools:context=".login.LogOptions">
+
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/welcome_to_happy_first"
+        android:textAlignment="center"
+        android:textColor="@color/dark_Blue"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_alignBottom="@+id/welcome"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="20dp"
+
+        android:layout_marginBottom="-338dp"
+        android:background="@drawable/buttonbgsolid"
+        android:padding="16dp"
+        android:text="@string/sign_up"
+        android:textColor="@color/materialYellow" />
+
+    <Button
+        android:id="@+id/sign"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/buttonbgwhite"
+        android:padding="16dp"
+        android:text="@string/i_have_an_acount"
+              android:layout_below="@+id/register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register" />
+
+    <TextView
+        android:id="@+id/guest"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_below="@+id/sign"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="29dp"
+        android:text="@string/i_am_guest"
+        android:textAlignment="center"
+        android:textColor="@color/dark_Blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sign" />
+
+
+</RelativeLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Onboarding.Onboarding2">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="START THE JOURNEY"
+        android:textAlignment="center"
+        android:textColor="@color/deep_blue"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+         />
+
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle"
+        android:layout_marginTop="115dp"
+        android:layout_centerInParent="true"
+        />
+
+    <TextView
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="270dp"
+        android:layout_marginBottom="188dp"
+        android:text="THE DATA YOU WILL SHARE ON THIS APP WILL BE USED TO GIVE YOU SPECIFIC ADVICE"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+         android:layout_marginTop="36dp"
+      android:layout_marginBottom="0dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+       >
+
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:text="NEXT" />
+
+
+        <ImageView
+            android:id="@+id/c1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_toEndOf="@+id/next"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/circle_no_border" />
+
+        <ImageView
+            android:id="@+id/c2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_toEndOf="@+id/c1"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/circle_no_border"/>
+
+        <ImageView
+            android:id="@+id/c3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_toEndOf="@+id/c2"
+
+            android:layout_marginEnd="96dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/circle_with_solid"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:layout_alignParentEnd="true"
+            android:text="SKIP" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
