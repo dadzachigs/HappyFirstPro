@@ -18,47 +18,21 @@ import co.zw.techsolutes.happyfirst.Mainpage.BotomMenu.ResourcesFragment;
 import co.zw.techsolutes.happyfirst.R;
 
 public class MainPage extends AppCompatActivity {
-    ViewPager viewPager;
-    TabLayout tabLayout;
+
     BottomNavigationView bottomNavigation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-        tabLayout = findViewById(R.id.tabLayout);
-        viewPager = findViewById(R.id.viewPager);
-        bottomNavigation = findViewById(R.id.bottom_navigation);
 
-
-        final TabAdapter pageAdapter = new TabAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(pageAdapter);
-        tabLayout.setupWithViewPager(viewPager);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-                //
-
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-
-
-
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        //I added this if statement to keep the selected fragment when rotating the device
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,
+                    new HomeFragment()).commit();
+        }
     }
     public void openFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -68,20 +42,40 @@ public class MainPage extends AppCompatActivity {
     }
 
     BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
+            item -> {
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        openFragment(HomeFragment.newInstance("", ""));
+                        return true;
+                    case R.id.navigation_sms:
+                        openFragment(ResourcesFragment.newInstance("", ""));
+                        return true;
+                    case R.id.navigation_notifications:
+                        openFragment(PersonalFragment.newInstance("", ""));
+                        return true;
+                }
+                return false;
+            };
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
                     switch (item.getItemId()) {
                         case R.id.navigation_home:
-                            openFragment(HomeFragment.newInstance("", ""));
-                            return true;
+                            selectedFragment = new HomeFragment();
+                            break;
                         case R.id.navigation_sms:
-                            openFragment(ResourcesFragment.newInstance("", ""));
-                            return true;
+                            selectedFragment = new ResourcesFragment();
+                            break;
                         case R.id.navigation_notifications:
-                            openFragment(PersonalFragment.newInstance("", ""));
-                            return true;
+                            selectedFragment = new PersonalFragment();
+                            break;
                     }
-                    return false;
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,
+                            selectedFragment).commit();
+                    return true;
                 }
             };
 }
