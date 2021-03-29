@@ -6,6 +6,14 @@
     android:layout_height="wrap_content">
 
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="16dp" >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,10 +27,11 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/examPic"
-            android:maxLines="1"
+            android:maxLines="2"
+            android:textStyle="bold"
             android:text="Upper East Medical Center"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/examPic"
@@ -39,19 +48,14 @@
             android:layout_below="@+id/lab_name"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="3dp"
             android:layout_toEndOf="@+id/examPic"
-
-            android:gravity="center"
+            android:maxLines="5"
+            android:textAlignment="center"
             android:text="567 Drew Drive, Msasa Harare"
-            android:textSize="16sp" />
-
-
-
-
-
-
-
+            android:textSize="14sp" />
 
     </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

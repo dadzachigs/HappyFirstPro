@@ -12,15 +12,13 @@
 
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
         android:weightSum="55"
         android:orientation="vertical"
-        tools:context="zw.co.trigonsolutes.covid19zimapp.withAccount.NewDashboard"
-        tools:deviceIds="wear">
+       >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -52,13 +50,22 @@
 
         </RelativeLayout>
 
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="216dp">
 
             <TextView
                 android:id="@+id/tv1"
-                android:layout_width="180dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="35dp"
@@ -99,13 +106,23 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="20dp"
 
-                android:background="@drawable/buttonbgsolid"
+                android:background="@color/deep_blue"
                 android:padding="16dp"
-                android:text="@string/sign_up"
+                android:text="Check Yorself"
                 android:textColor="@color/materialYellow" />
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/deep_blue"
+                android:layout_toRightOf="@+id/register"
+                android:layout_marginTop="165dp"
+                android:background="@color/pink"/>
 
 
         </RelativeLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -114,56 +131,65 @@
 
             >
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayout"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_selfscreen"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                app:tabSelectedTextColor="@color/pink"
-                app:tabTextColor="@android:color/black"
-                tools:ignore="MissingPrefix"
-
-                >
-
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/tabStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/national" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/tabChats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/provincial" />
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/list_item_my_info" />
 
 
-            </com.google.android.material.tabs.TabLayout>
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewPager"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
-            <View style="@style/Divider"/>
+
+            <!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:id="@+id/tabLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                app:tabSelectedTextColor="@color/pink"-->
+<!--                app:tabTextColor="@android:color/black"-->
+<!--                tools:ignore="MissingPrefix"-->
+
+<!--                >-->
+
+<!--                <com.google.android.material.tabs.TabItem-->
+<!--                    android:id="@+id/tabStatus"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/national" />-->
+
+<!--                <com.google.android.material.tabs.TabItem-->
+<!--                    android:id="@+id/tabChats"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/provincial" />-->
+
+
+<!--            </com.google.android.material.tabs.TabLayout>-->
+
+<!--            <androidx.viewpager.widget.ViewPager-->
+<!--                android:id="@+id/viewPager"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+
+<!--                />-->
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:src="@drawable/menstrualcalender2"/>
         </LinearLayout>
 
     </LinearLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/container"
-        >
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@color/grayish"
-            app:itemIconTint="@color/white"
-            app:itemTextColor="@color/white"
-            app:menu="@menu/bottom_navigation_menu"
-            />
-    </FrameLayout>
+</ScrollView>
+</LinearLayout>
+
+
+
 </androidx.drawerlayout.widget.DrawerLayout>

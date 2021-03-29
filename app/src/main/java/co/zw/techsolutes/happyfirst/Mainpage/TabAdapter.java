@@ -4,6 +4,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import co.zw.techsolutes.happyfirst.Mainpage.BotomMenu.Home.GetPadsFragment;
+import co.zw.techsolutes.happyfirst.Mainpage.BotomMenu.Home.InfoFragment;
+
 public class TabAdapter extends FragmentPagerAdapter {
 
     int totalTabs;

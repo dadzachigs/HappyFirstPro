@@ -1,4 +1,4 @@
-package co.zw.techsolutes.happyfirst.Mainpage;
+package co.zw.techsolutes.happyfirst.Mainpage.BotomMenu.Home;
 
 import android.os.Bundle;
 
@@ -29,7 +29,7 @@ public class GetPadsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        getContext().getTheme().applyStyle(R.style.AppStyle, true);
         View view= inflater.inflate(R.layout.fragment_get_pads, container, false);
         return view;
     }
